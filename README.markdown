@@ -1,5 +1,7 @@
 # Server Status
 
+[![Build Status](https://travis-ci.org/shopkeep/server_status.png)](https://travis-ci.org/shopkeep/server_status)
+
 Mount a Rack application, that will act as a health check that ELB, Varnish, etc can use to verify that the application is healthy
 
 ## Installation
