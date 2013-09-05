@@ -1,4 +1,4 @@
-module ServerStatus
+module RailsServerStatus
   module ApplicationHelper
   end
 end

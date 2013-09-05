@@ -1,13 +1,13 @@
 $:.push File.expand_path("../lib", __FILE__)
 
-require "server_status/version"
+require "rails_server_status/version"
 
 Gem::Specification.new do |s|
-  s.name        = "server_status"
-  s.version     = ServerStatus::VERSION
+  s.name        = "rails_server_status"
+  s.version     = RailsServerStatus::VERSION
   s.authors     = ["Duncan Grazier"]
   s.email       = ["itsmeduncan@gmail.com"]
-  s.homepage    = "https://github.com/shopkeep/server_status"
+  s.homepage    = "https://github.com/shopkeep/rails_server_status"
   s.summary     = "Simple Rails health checking"
   s.description = "A Rails 4 Engine for health checking your application"
 

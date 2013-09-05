@@ -1,6 +1,6 @@
-# Server Status
+# Rails Server Status
 
-[![Build Status](https://travis-ci.org/shopkeep/server_status.png)](https://travis-ci.org/shopkeep/server_status)
+[![Build Status](https://travis-ci.org/shopkeep/rails_server_status.png)](https://travis-ci.org/shopkeep/rails_server_status)
 
 Mount a Rack application, that will act as a health check that ELB, Varnish, etc can use to verify that the application is healthy
 
@@ -8,7 +8,7 @@ Mount a Rack application, that will act as a health check that ELB, Varnish, etc
 
 Add this line to your application's Gemfile:
 
-    gem 'server_status'
+    gem 'rails_server_status'
 
 And then execute:
 
@@ -16,13 +16,13 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install server_status
+    $ gem install rails_server_status
 
 ## Usage
 
 In `config/routes.rb`:
 
-    mount ServerStatus::Engine => "/server-status"
+    mount RailsServerStatus::Engine => "/server-status"
 
 cURL the mounted endpoint:
 

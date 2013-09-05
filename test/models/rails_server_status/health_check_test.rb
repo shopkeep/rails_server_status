@@ -1,31 +1,31 @@
 require 'test_helper'
 
-module ServerStatus
+module RailsServerStatus
   class HealthCheckTest < ActiveSupport::TestCase
 
     def test_database_status_when_connected
       ActiveRecord::Base.expects(:connection_pool).returns(mock(connected?: true))
-      assert_equal 'up', ServerStatus::HealthCheck.new.database_status
+      assert_equal 'up', RailsServerStatus::HealthCheck.new.database_status
     end
 
     def test_database_status_when_disconnected
       ActiveRecord::Base.expects(:connection_pool).returns(mock(connected?: false))
-      assert_equal 'down', ServerStatus::HealthCheck.new.database_status
+      assert_equal 'down', RailsServerStatus::HealthCheck.new.database_status
     end
 
     def test_process_id
       Process.expects(:pid).returns('fake.pid')
-      assert_equal 'fake.pid', ServerStatus::HealthCheck.new.process_id
+      assert_equal 'fake.pid', RailsServerStatus::HealthCheck.new.process_id
     end
 
     def test_process_uptime
       Process.expects(:times).returns(mock(utime: 'fake.uptime'))
-      assert_equal 'fake.uptime', ServerStatus::HealthCheck.new.process_uptime
+      assert_equal 'fake.uptime', RailsServerStatus::HealthCheck.new.process_uptime
     end
 
     def test_ip_address
       IPSocket.expects(:getaddress).returns('fake.ip.address')
-      assert_equal 'fake.ip.address', ServerStatus::HealthCheck.new.ip_address
+      assert_equal 'fake.ip.address', RailsServerStatus::HealthCheck.new.ip_address
     end
 
     def test_as_json
@@ -34,7 +34,7 @@ module ServerStatus
       Process.expects(:times).returns(mock(utime: 'fake.uptime'))
       IPSocket.expects(:getaddress).returns('fake.ip.address')
 
-      health_check = ServerStatus::HealthCheck.new
+      health_check = RailsServerStatus::HealthCheck.new
 
       expected_json = {
         database: "up",
@@ -52,7 +52,7 @@ module ServerStatus
       Process.expects(:times).returns(mock(utime: 'fake.uptime'))
       IPSocket.expects(:getaddress).returns('fake.ip.address')
 
-      health_check = ServerStatus::HealthCheck.new
+      health_check = RailsServerStatus::HealthCheck.new
 
       assert_equal "up fake.pid fake.uptime fake.ip.address", health_check.as_text
     end

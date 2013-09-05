@@ -1,6 +1,6 @@
 require 'test_helper'
 
-module ServerStatus
+module RailsServerStatus
   class HealthHelperTest < ActionView::TestCase
   end
 end

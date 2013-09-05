@@ -1,10 +1,10 @@
-require_dependency "server_status/application_controller"
+require_dependency "rails_server_status/application_controller"
 
-module ServerStatus
+module RailsServerStatus
   class HealthController < ApplicationController
 
     def show
-      @health_check = ServerStatus::HealthCheck.new
+      @health_check = RailsServerStatus::HealthCheck.new
 
       respond_to do |format|
         format.html { render text: @health_check.as_text }

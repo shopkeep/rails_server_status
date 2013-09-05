@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    server_status (0.0.1)
+    rails_server_status (0.0.1)
       rails (~> 4.0.0)
 
 GEM
@@ -92,6 +92,6 @@ PLATFORMS
 
 DEPENDENCIES
   mocha
-  server_status!
+  rails_server_status!
   simplecov
   sqlite3

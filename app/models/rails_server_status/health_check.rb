@@ -1,4 +1,4 @@
-module ServerStatus
+module RailsServerStatus
   class HealthCheck
 
     def database_status
