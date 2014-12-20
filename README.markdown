@@ -1,6 +1,4 @@
-# Rails Server Status
-
-[![Build Status](https://travis-ci.org/shopkeep/rails_server_status.png?branch=master)](https://travis-ci.org/shopkeep/rails_server_status)
+# Rails Server Status [![Build Status](https://travis-ci.org/shopkeep/rails_server_status.png?branch=master)](https://travis-ci.org/shopkeep/rails_server_status) [![Code Climate](https://codeclimate.com/github/shopkeep/rails_server_status/badges/gpa.svg)](https://codeclimate.com/github/shopkeep/rails_server_status)
 
 Mount a Rack application, that will act as a health check that ELB, Varnish, etc can use to verify that the application is healthy
 
